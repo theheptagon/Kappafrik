@@ -20,6 +20,34 @@ var swipers = new Swiper('#page-banner .swiper-container', {
     speed:500
 });
 
+// slider for news thumb
+// ------------------------------------------
+var swipers = new Swiper('.section-thumb .swiper-container', {
+    pagination: '.news-thumb .swiper-pagination',
+
+    // Navigation arrows
+    nextButton: '.section-thumb .swiper-button-next',
+    prevButton: '.section-thumb .swiper-button-prev',
+
+    paginationClickable: true,
+    autoplay: 5000,
+    lazyLoading:true,
+    speed:500
+});
+
+// slider for partners
+// -------------------------------------------
+var swiper = new Swiper('.partners-listing .swiper-container', {
+        pagination: '.partners-listing .swiper-pagination',
+        slidesPerView: 5,
+        paginationClickable: true,
+        spaceBetween: 0,
+        // Navigation arrows
+        nextButton: '.partners-listing .swiper-button-next',
+        prevButton: '.partners-listing .swiper-button-prev'
+    });
+
+
 // small fix for tabs to remove active class from siblings 
 // --------------------------------------------
 $('.nav-tabs li a').click(function(){

@@ -45,6 +45,10 @@
                         <li class="active"><a href="mediacenter.html">Media Center</a></li>
                         <li><a href="contactus.html">Contact Us</a></li>
                         <li>
+                           <ul class="list-unstyled sub-navigation">
+                                <li><a href="javascript:;">KAPPAFRIK MANAGEMNT</a></li>
+                                <li><a href="javascript:;">KAPPAYACHT LTD</a></li>
+                            </ul>
                             <div class="search">
                                 <div class="form-group">
                                     <input type="text" placeholder="Search" class="form-control">
@@ -55,10 +59,7 @@
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-                <ul class="list-unstyled sub-navigation">
-                    <li><a href="javascript:;">KAPPAFRIK MANAGEMNT</a></li>
-                    <li><a href="javascript:;">KAPPAYACHT LTD</a></li>
-                </ul>
+                
             </div>
             <!-- /.container-fluid -->
         </nav>
@@ -110,8 +111,31 @@
                             </div>
                             <h1 class="h3 page-title">News title 1</h1>
                             <div class="date">12/9/2015</div>
-                            <div class="news-thumb">
-                                <img src="ui/media/news/news-thumb.png" class="img-responsive" alt="">
+                            <div class="news-thumb section-thumb">
+                                <!-- Slider main container -->
+                                <div class="swiper-container">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide">
+                                            <img src="ui/media/news/news-thumb.png" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="ui/media/news/news-thumb.png" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="ui/media/news/news-thumb.png" class="img-responsive" alt="">
+                                        </div>
+                                        ...
+                                    </div>
+                                    
+
+                                    <!-- If we need navigation buttons -->
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+
+                                </div>
+                                
                             </div>
                            
                             <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
@@ -123,7 +147,34 @@
                     ----------------------------------->
                 </div>
                 <div class="col-sm-3">
-                    asdasad
+                    <aside class="right-sidebar">
+                        <div class="widget-feed">
+                            <h4 class="title">2015</h4>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is Lorem ipsum dolor is Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;" class="view">View All</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget-feed">
+                            <h4 class="title">2014</h4>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;">Lorem ipsum dolor is</a></li>
+                                    <li><a href="javascript:;" class="view">View All</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
             <!-- venture-list-main ends here 
@@ -136,15 +187,26 @@
     
     <section class="partners-listing">
         <h2 class="h3 section-title">Partners</h2>
-        <div class="listing-area">
-            <div class="container">
-                <ul class="list-unstyled">
-                    <li><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></li>
-                    <li><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></li>
-                    <li><a href="javascript;;"><img src="ui/media/home/partners/petrolog.png" alt=""></a></li>
-                    <li><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></li>
-                    <li><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></li>
-                </ul>
+        <div class="listing-area inner">
+            <div class="container-fluid">
+                <div class="swiper-button-prev"><img src="ui/media/element/section-left-arrow.png" alt=""></div>
+                <div class="swiper-button-next"><img src="ui/media/element/section-right-arrow.png" alt=""></div>
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/petrolog.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/petrolog.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </section>

@@ -208,8 +208,10 @@ header.site-header {
                 text-transform:uppercase;
                 color:$black;
                 @include transition(all ease 0.5s);
-                padding:5px 43px;
+                padding:5px 28.5%;
+                display:block;
                 @include font(400);
+                white-space: nowrap;
                 &:hover {
                     color:$brand;
                 }
@@ -224,7 +226,7 @@ header.site-header {
     }
     .sub-navigation {
         position:absolute;
-        right:6%;
+        right:0;
         top:-30px;
         li {
             float:left;
@@ -268,7 +270,7 @@ header.site-header {
         position:relative;
         .form-control {
             float:left;
-            width:270px;
+            width:290px;
             @include border-top-radius(0);
             @include border-bottom-radius(0);
             border:0;
@@ -546,19 +548,50 @@ header.site-header {
     }
     .listing-area {
         background-color:#f9f9f9;
+        position:relative;
+        &.inner {
+            .swiper-button-prev {
+                left:20px;
+            }
+            .swiper-button-next {
+                right:20px;
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {
+            background: transparent;
+            .swiper-button-disabled {
+                opacity:0.5;
+            }
+        }
+        .swiper-button-prev {
+            left:18%;
+        }
+        .swiper-button-next {
+            right:18%;
+        }
+        .swiper-slide {
+            a {
+                display:block;
+                border-left:1px solid #e1e1e1;
+                padding:20px 0;
+                text-align:center;
+                height:130px;
+                img {
+                    @include vertical-align();
+                }
+            }
+            &:first-child {
+                a {
+                    border-left:0;
+                }
+            }
+        }
         ul {
             li {
                 width:20%;
                 float:left;
                 a {
-                    display:block;
-                    border-right:1px solid #e1e1e1;
-                    padding:20px 10px;
-                    text-align:center;
-                    height:130px;
-                    img {
-                        @include vertical-align();
-                    }
+                    
                 }
                 &:last-child {
                     a {
@@ -740,6 +773,11 @@ header.site-header {
         }
         .news-thumb {
             margin-bottom:20px;
+            .swiper-slide {
+                img {
+                    width:100%;
+                }
+            }
         }
     }
     .scrollup {
@@ -769,8 +807,9 @@ header.site-header {
 // 12.0 sidebar
 // -------------------------------
 #sidebar {
+    padding-top:60px;
     .section-nav {
-        margin-top:30px;
+        
         margin-bottom:0;
         li {
             position:relative;
@@ -823,7 +862,7 @@ header.site-header {
 // 13.0 single-column
 // -------------------------------
 .single-column {
-    padding:15px 7% 50px 40px;
+    padding:15px 5% 50px 40px;
 }
 
 // 13.2 double-column
@@ -857,6 +896,38 @@ header.site-header {
                     content: "> ";
                     padding: 0 2px;
                     color: #727272;
+                }
+            }
+        }
+    }
+}
+
+// 15.0 widget-feed 
+// -------------------------------
+.right-sidebar {
+    padding-top:60px;
+}
+
+.widget-feed {
+    .title {
+        background-color:#e5e5e5;
+        padding:15px 25% 15px 30px;
+    }
+    .widget-content {
+        padding:20px 25% 20px 30px;
+        ul {
+            @extend .list-unstyled;
+            li {
+                background:url(#{$baseurl}/element/sidebar-bullet.png) no-repeat left 10px;
+                padding-left:20px;
+                color:$black;
+                a {
+                    display:block;
+                    color:#000;
+                    &.view {
+                        @include font(700);
+                        font-size:0.8125em;
+                    }
                 }
             }
         }
