@@ -1,0 +1,1 @@
+var swipers=new Swiper("#page-banner .swiper-container",{pagination:"#page-banner .swiper-pagination",nextButton:"#page-banner .swiper-button-next",prevButton:"#page-banner .swiper-button-prev",paginationClickable:!0,autoplay:5e3,lazyLoading:!0,speed:500});$(".nav-tabs li a").click(function(){$(this).parent().parent().siblings().find("li").removeClass("active")});

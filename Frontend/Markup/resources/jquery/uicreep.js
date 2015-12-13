@@ -7,60 +7,31 @@
 // 1.0 Main-banner slider initializer
 // will slide slider
 // ------------------------------------------
-var swipers = new Swiper('.main-slider', {
-    pagination: '.main-slider .swiper-pagination',
+var swipers = new Swiper('#page-banner .swiper-container', {
+    pagination: '#page-banner .swiper-pagination',
 
     // Navigation arrows
-    nextButton: '.main-slider .swiper-button-next',
-    prevButton: '.main-slider .swiper-button-prev',
+    nextButton: '#page-banner .swiper-button-next',
+    prevButton: '#page-banner .swiper-button-prev',
 
     paginationClickable: true,
     autoplay: 5000,
     lazyLoading:true,
     speed:500
-}); 
-
-
-// Priority slider on the homepage 
-// -------------------------------------------
-var swipers = new Swiper('.priority-listing', {
-    pagination: '.priority-listing .swiper-pagination',
-    effect: 'fade',
-    // Navigation arrows
-    nextButton: '.priority-listing .swiper-button-next',
-    prevButton: '.priority-listing .swiper-button-prev',
-
-    paginationClickable: true,
-    autoplay: 5000,
-    speed:500
 });
 
-// calendar slider on the homepage
-// ------------------------------------------
-var swipers = new Swiper('.calendar-listing', {
-    pagination: '.calendar-listing .swiper-pagination',
-    // Navigation arrows
-    nextButton: '.calendar-listing .swiper-button-next',
-    prevButton: '.calendar-listing .swiper-button-prev',
-    slidesPerView: 4,
-    paginationClickable: true,
-    autoplay: 5000,
-    speed:500
-});
-
-// menu button triggering 
+// small fix for tabs to remove active class from siblings 
 // --------------------------------------------
-$('.menu').click(function(){
-    var navigation = $('.page-menu');
-    navigation.toggleClass('right'); 
+$('.nav-tabs li a').click(function(){
+   $(this).parent().parent().siblings().find('li').removeClass('active'); 
 });
 
-$(document).mouseup(function (e) {
-    var container = $(".page-menu");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        navigation.removeClass('right'); 
-    }
-});
+//$(document).mouseup(function (e) {
+//    var container = $(".page-menu");
+//
+//    if (!container.is(e.target) // if the target of the click isn't the container...
+//        && container.has(e.target).length === 0) // ... nor a descendant of the container
+//    {
+//        navigation.removeClass('right'); 
+//    }
+//});

@@ -1,10 +1,10 @@
 @import "bootstrap";
-@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,300);
 @import "https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.1.0/css/swiper.min.css";
 @import "https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css";
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
-//@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
 // Documentation starts here
 // ----------------------------------
 // 1.0  =========== Variables for the website
@@ -17,56 +17,48 @@ $baseurl: "../media"; // base url define for accessing images directly backgroun
 $sprite-width: 50px; // width of sprite
 $sprite-height: 50px; // height of sprite
 $sprite: url(#{$baseurl}/sprite.png); // url for sprite file
-$brand: #006c03; // brand color
+$brand: #197ec2; // brand color
 $gray: #7b7b7b; // secondary color for brand
 $gray-light: #414141; // lighter color for gray
-$red: #c91517;
-$yellow: #cba30b;
+$black: #000;
+$yellow: #e5a629;
 $radius:2px; // Border radius thorough out the site
 // 2.0
 // Font Face for the site
 // ========================================================
 @font-face {
-    font-family: 'TrajanPro-Regular';
-    src: url('../font/TrajanPro-Regular_gdi.eot');
-    src: url('../font/TrajanPro-Regular_gdi.eot?#iefix') format('embedded-opentype'), url('../font/TrajanPro-Regular_gdi.woff') format('woff'), url('../font/TrajanPro-Regular_gdi.ttf') format('truetype'), url('../font/TrajanPro-Regular_gdi.otf') format('opentype'), url('../font/TrajanPro-Regular_gdi.svg#TrajanPro-Regular') format('svg');
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-}
-
-@font-face {
-    font-family: 'TrajanPro-Bold';
-    src: url('../font/TrajanPro-Bold_gdi.eot');
-    src: url('../font/TrajanPro-Bold_gdi.eot?#iefix') format('embedded-opentype'), url('../font/TrajanPro-Bold_gdi.woff') format('woff'), url('../font/TrajanPro-Bold_gdi.ttf') format('truetype'), url('../font/TrajanPro-Bold_gdi.otf') format('opentype'), url('../font/TrajanPro-Bold_gdi.svg#TrajanPro-Bold') format('svg');
-    font-weight: 700;
-    font-style: normal;
-    font-stretch: normal;
+  font-family: 'Lingwood-Light';
+  src: url('../font/LingwoodLight.eot'); /* IE9 Compat Modes */
+  src: url('../font/LingwoodLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/LingwoodLight.woff') format('woff'), /* Modern Browsers */
+       url('../font/LingwoodLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../font/LingwoodLight.svg#a79a5ec13da08cb904cceb42052d4ded') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
 }
 
 // 3.0
 // Mixins for the site
 // ========================================================
 // Mixin for font & 
-// font weight's are 400 - regular, 600 - semibold, 700 - bold
+// font weight's are 400 - regular, 300 - light, 700 - bold
 // -------------------------------------------
 @mixin font($weight) {
     font-family: 'Lato', sans-serif;
     font-weight: $weight;
 }
 
-@mixin trajr() {
-    font-family: 'TrajanPro-Regular', sans-serif;
+@mixin head() {
+    font-family:'Lingwood-Light', sans-serif;
+    font-weight:200;
 }
 
-@mixin trajb() {
-    font-family: 'TrajanPro-Bold', sans-serif;
-}
+
 
 // Mixin for creating sprites
 // -------------------------------------------
-@mixin sprite($leftpos,
-$toppos) {
+@mixin sprite($leftpos, $toppos) {
     background-image: $sprite;
     background-repeat: no-repeat;
     //background-position-x: -($sprite-width * $leftpos);
@@ -90,16 +82,29 @@ $toppos) {
     border-bottom-left-radius: $radius;
 }
 
+// Mixin for vertical centering anything
+// ------------------------------------------
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@mixin center-align() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 // 3.0 
 // Global elements 
 // -------------------------------------------
 body {
-    @include font(400);
-    padding-top: 99px;
-    background-color:#f8f8f8;
-    color:#7b7b7b;
-    font-size:16px;
-    line-height:30px;
+    @include font(300);
+    color:#0b0b0b;
+    font-size:160%;
+    line-height:1.5em;
 }
 
 .clearAll {
@@ -121,38 +126,36 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    @include trajr();
-    color:$red;
+    @include head();
+    text-transform: uppercase;
 }
 h1, .h1 {
-    font-size:34px;
+    font-size:2em; // 32px
 }
 
 h2,
 .h2 {
-    font-size:30px
+    font-size:1.75em // 28px
 }
-
-
 
 h3,
 .h3 {
-    font-size:28px;
+    font-size:1.5em; // 24px
 }
 
 h4,
 .h4 {
-    font-size: 24px;
+    font-size: 1.25em; // 20px
 }
 
 h5,
 .h5 {
-    font-size:20px;
+    font-size:1.125em; // 18px
 }
 
 h6,
 .h6 {
-    font-size:16px;
+    font-size:1em; // 16px
 }
 
 
@@ -167,572 +170,399 @@ p {
     margin-bottom:20px;
 }
 
-.pattern {
-    background:url(#{$baseurl}/element/pattern.png) repeat-x left top $yellow;
-    position:absolute;
-    left:0;
-    top:-20px;
-    bottom:-20px;
-    width:160px;
-    &.right {
-        right:0;
-        left:auto;
-    }
+.container-fluid {
+    padding-left:0;
+    padding-right:0;
 }
 
-.readmore {
-    @include trajb();
-    font-size:11px;
-    font-style:italic;
-    color:#242424;
-    font-size:11px;
-    position:relative;
-    @include transition(all ease 0.5s);
-    &:hover {
-        color:$red;
-        i {
-            color:$red;
-            margin-left:30px;
-        }
-        span {
-            background:$red;
-        }
-    }
-    i {
-        margin-left:10px;
-        @include transition(all ease 0.5s);
-    }
-    span {
-        height:1px;
-        width:50px;
-        position:absolute;
-        left:0;
-        bottom:-5px;
-        background:#000;
-        @include transition(all ease 0.5s);
-    }
-}
+// Above all to be customized according to the website 
+// ---------------------------------------------------------
+
+
 
 // Let the site Building Begin
 // =========================================================
-// 1.0 main-header 
+// 1.0 Header and navbar 
 // --------------------------------
-header.main-header {
-    background-color: #fff;
-    @include clearfix();
-    border-top: 5px solid $red;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    .contentSection {
-        padding: 0 0;
-    }
-    .logo {
-        padding:10px 0;
-        display:block;
-    }
-    .sepe {
-        border-right:1px solid #f1f1f1;
-        padding:26px 20px;
-        float:right;
-    }
-    .menu {
-        background:$yellow;
-        color:#fff;
-        border:1px solid darken($yellow, 10%);
-        padding:5px 15px;
-        font-size:30px;
-        margin-bottom:2px;
-        display:block;
-    }
-    .search {
-        color:#b7b7b7;
-        font-size:24px;
-        padding:7px 0;
-        display:block;
-    }
-    .language {
-        color:#b7b7b7;
-        @include trajr();
-        font-size:14px;
-        //padding-right:10px;
-        float:left;
-        margin-top:6px;
-        margin-bottom:8px;
-        font-size:18px;
-        @include transition(all ease 0.5s);
-        &:after {
-            //content:'|';
-           //padding-left:10px;
-        }
-        &:last-child {
-            padding-right:0px;
-            &:after {
-                content:'';
-                padding-left:0;
-            }
-        }
-        &.active,
-        &:hover {
-            color:$red;
-        }
-    }
-    .telephone {
-        margin-top:10px;
-        display:block;
-        margin-bottom:4px;
-        color:#5f5f5f;
-        @include trajr();
-        i {
-            margin-right:20px;
-        }
-    }
-    .head-social {
-        color:#999;
-        font-size:18px;
-        @include clearfix();
-        margin:10px 0 5px 0;
-        li {
-            float:left;
-            margin-right:15px;
-            a {
-                color:#999;
-                @include transition(all ease 0.5s);
-                &:hover {
-                    color:$red;
-                }
-            }
-            &:last-child {
-                margin-right:0;
-            }
-        }
-    }
+header.site-header {
+    border-top:10px solid $black;
+  #logo-main {
+    display: block;
+    margin: 20px auto 0;
+  }
 }
 
-// 2.0 Home Banner Section
-// =========================================================
-.home-banner {
-    margin: 0;
-    padding: 0;
-    @include clearfix();
-    overflow: hidden;
-    border-bottom: 5px solid $yellow;
-    .main-slider {
-	    margin: 0 0 0 0;
-	    padding: 0;
-	    @include clearfix();
-	    position: relative;
-	    .swiper-slide {
-	    	img {
-	    		width:100%;
-	    		height:auto;
-	    	}
-            .caption {
-                
-                width:27%;
-                position:absolute;
-                right:10%;
-                top:45%;
-                
-                a {
-                    background-color:rgba($red, 0.8);
-                    padding:20px;
-                    display:block;
-                    @include transition(all ease 0.5s);
-                    h6 {
-                        font-size:12px;
-                        line-height:12px;
-                        margin:0 0 0 0 ;
-                        color:#fff;
-                        @include trajr();
-                        span {
-                            color:$yellow;
-                            letter-spacing:1px;
-                        }
-                    }
-                    h2 {
-                        color:#fff;
-                        font-size:35px;
-                        @include trajr();
-                        margin:0 0 0 0 ;
-                        span {
-                            font-size:12px;
-                            color:#fff;
-
-                        }
-                    }
-                    &:hover {
-                        background-color:rgba($red,1);
-                    }
-                }
-            }
-	    }
-        .swiper-pagination {
-            width:auto;
-            left:10%;
-            .swiper-pagination-bullet {
-                background-color:#2a2a2a;
-                opacity:1;
-                margin:0 2px;
-                &.swiper-pagination-bullet-active {
-                    background-color:$red;
-                }
-            }
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-            background-image:none;
-            color:#fff;
-            font-size:80px;
-        }
-    }
-}
-
-// Core Service Section
-// =========================================================
-.core-service {
-    border-bottom: 1px solid #d1d4db;
-    @include clearfix();
-    background-color:#fff;
-    ul {
-        @include clearfix();
-        margin:0 0 0 0;
-        li {
-            float:left;
-            width:33.333%;
-            border-right:3px solid $yellow;
-            position:relative;
-            a {
-                padding:20px 20px;
-                display:block;
-            }
-            i {
-                position:absolute;
-                right:20px;
-                color:#686563;  
-                top:20px;
-                @include transition(all ease 0.5s);
-            }
-            h5 {
-                color:#000;
-                font-size:16px;
+#navbar-primary.navbar-default {
+    background: transparent;
+    border: none;
+    margin-bottom:0;
+    min-height:44px;
+    .navbar-nav { 
+        width: 100%;
+        text-align: center;
+        > li {
+            display: inline-block;
+            float: none;
+            > a {
+                font-size:0.875em;
                 text-transform:uppercase;
-                @include trajb();
-                margin:0 0 0 0;
+                color:$black;
                 @include transition(all ease 0.5s);
-            }
-            p {
-                font-size:14px;
-                color:#7b7b7b;
-                margin:0 0 0 0;
-                @include transition(all ease 0.5s);
-                line-height:24px;
-            }
-            &:last-child {
-                border-right:0;
-                a {
-                    padding-right:0;
-                }
-            }
-            &:first-child {
-                a {
-                    padding-left:0;
-                }
-            }
-            a {
+                padding:5px 43px;
+                @include font(400);
                 &:hover {
-                    i, h5 {
-                        color:$yellow
-                    }
-
-                }
-            }
-        }
-    }
-}
-
-// content-area starts here
-// --------------------------------------
-.content-area {
-    padding:20px 0;
-    border-bottom:6px solid #e8e8e8;
-    .container {
-        position:relative;
-    }
-}
-
-// home-tab starts here
-// --------------------------------
-.home-tab {
-    .nav-pills {
-        margin-bottom:30px;
-        li {
-            
-            a {
-                background-color:#dbdbdb;
-                color:#000;
-                @include trajb();
-                padding:10px 20px;
-                font-size:13px;
-                line-height:13px;
-                @include border-left-radius(0);
-                @include border-right-radius(0);
-                @include transition(all ease 0.5s);
-                &:hover {
-                    background:#7f7f7f;
-                    color:#fff;
+                    color:$brand;
                 }
             }
             &.active {
                 a {
-                    background:#7f7f7f;
-                    color:#fff;
+                    background:none;
+                    color:$brand;
+                }
+            }
+        }
+    }
+    .sub-navigation {
+        position:absolute;
+        right:6%;
+        top:-30px;
+        li {
+            float:left;
+            a {
+                color:$black;
+                font-size:0.75em;
+                margin-right:5px;
+                font-weight:400;
+                @include transition(all ease 0.5s);
+                &:hover {
+                    color:$brand;
+                }
+            }
+            &:after {
+                content:'|';
+                margin-right:5px;
+            }
+            &:last-child {
+                a {
+                    margin-right:0;
+                }
+                &:after {
+                    content:'';
+                    margin-right:0;
+                    a {
+                        
+                    }
                 }
             }
         }
     }
 }
 
-
-// priority-area starts her
+// 1.1 Search
 // --------------------------------
-.priority-area {
-    background:url(#{$baseurl}/home/priority-bg.jpg) no-repeat center top;
-    background-size:100%;
-    padding:40px 0 27px; 
-    overflow:hidden;
-    .priority-listing {
-        overflow:hidden;
-        padding-bottom:40px;
+.search {
+    margin-bottom:-10px;
+    .form-group {
+        margin-bottom:0;
+        @include clearfix();
         position:relative;
-        .swiper-pagination {
-            width:auto;
-            left:0;
-            top:40px;
-            bottom:auto;
-            span {
-                background-color:$red;
-                opacity:1;
-                &.swiper-pagination-bullet-active {
-                    background-color:$yellow;
-                }
+        .form-control {
+            float:left;
+            width:270px;
+            @include border-top-radius(0);
+            @include border-bottom-radius(0);
+            border:0;
+            height:43px;
+            background-color:#f9f9f9;
+            @include box-shadow(none);
+            @include placeholder($black);
+            @include font(400);
+            text-transform:uppercase;
+            color:$black;
+            &:focus {
+                outline:0;
             }
+        }
+        .search-button {
+            position:absolute;
+            right:15px;
+            top:15px;
+            border:0;
+            width:15px;
+            height:15px;
+            text-indent:-9999px;
+            background:url(#{$baseurl}/element/search-icon.png) no-repeat center top transparent;
+            &:focus {
+                outline:0;
+            }
+        }
+    }
+}
+
+// 2.0 page-banner 
+// --------------------------------
+#page-banner {
+    position:relative;
+    border-bottom: 10px solid $brand;
+    
+    .slide-title {
+        position:absolute;
+        @include center-align();
+        border:1px solid $black;
+        padding:8px;
+        .title {
+            font-size:1.625em;
+            background:rgba($black,0.5);
+            padding:20px 10px;
+            margin:0 0 0 0;
+            color:#fff;
         }
     }
     .swiper-slide {
-        @include clearfix();
-        position:relative;
-        opacity:0 !important;
-        &.swiper-slide-active {
-            opacity:1 !important;
-        }
-        h5 {
-            @include trajb();
-            font-size:14px;
-            float:left;
-            width:15%;
-            color:#000;
-            text-transform:uppercase;
-        }
-        h6 {
-            float:right;
-            width:84%;
-            color:#575757;
-            @include font(300);
-            font-size:19px;
-            line-height:30px;
-            font-style:italic;
-        }
-        span {
-            position:absolute;
-            right:0;
-            bottom:-40px;
-            font-size:15px;
-            color:$red;
-            @include font(400);
-            line-height:18px;
-            i {
-                font-style:normal;
-                @include font(400);
-                color:#000;
-                font-size:12px;
-            }
+        max-height:620px;
+        img {
+            width:100%;
+            height:auto;
         }
     }
-}
-
-// calendar-event starts here
-// --------------------------------
-.calendar-event {
-    background:url(#{$baseurl}/home/calendar-bg.jpg) no-repeat center top;
-    background-size:100%;
-    padding:40px 0 ;
-    position:relative;
-
-    h5 {
-        color:#fff;
-        text-align:center;
-        margin-bottom:40px;
+    .scrolldown {
+        position:absolute;
+        left:50%;
+        bottom:0;
+        margin-left:-41.5px;
+        z-index: 1;
     }
-    .calendar-listing {
-        overflow:hidden;
+    &.inner-banner {
+        border-width:5px;
         .swiper-slide {
-            @include clearfix();
-            a {
-                figure {
-                    background-color:#000;
-                    padding:10px 20px;
-                    color:#fff;
-                    float:left;
-                    width:70px;
-                    text-align:center;
-                    margin-right:20px;
-                    font-size:15px;
-                    line-height:18px;
-                    @include font(300);
-                    @include transition(all ease 0.5s);
-                    b {
-                        @include font(400);
-                        font-size:25px;
-                        line-height:25px;
-                    }
-                }
-                h6 {
-                    @include trajb();
-                    font-size:15px;
-                    color:#fff;
-                    margin-bottom:0;
-                    line-height:15px;
-                    @include transition(all ease 0.5s);
-                }
-                p {
-                    color:#b1b1b1;
-                    margin-bottom:0;
-
-                }
-                &:hover {
-                    figure {
-                        background:#b6b6b6;
-                        color:#000;
-                    }
-                }
-            }
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-            background:none;
-            font-size:40px;
-            top:55%;
-        }
-        .swiper-button-prev {
-            left:7%;
-        }
-        .swiper-button-next {
-            right:7%;
+            max-height:400px;
         }
     }
 }
 
-// media-section starts here
+// 3.0 our-focus 
 // --------------------------------
-.media-section{
-    padding:40px 0;
+.our-focus {
+    padding:20px 0;
     .title {
+        text-align:center;
+        text-transform:uppercase;
         margin-bottom:20px;
     }
-    .media-box {
-        margin-bottom:40px;
-        &:last-child {
-            margin-bottom:0;
+    p {
+        text-align:center;
+    }
+}
+
+// 3.1 venture-list-main
+// --------------------------------
+.venture-list-main {
+}
+
+// 4.0 Venture list
+// --------------------------------
+.venture-list {
+    overflow:hidden;
+    margin-bottom:40px;
+    a {
+        display:block;
+        position: relative;
+        max-height:360px;
+        img {
+            @include scale(1.1,1.1);
+            @include transition(all ease 10s);
+            width:100%;
+        }
+        .venture-title {
+            @include center-align();
+            position:absolute;
+            white-space:nowrap;
+            color:#fff;
+            background:rgba($black,0.7);
+            text-transform:uppercase;
+            padding:10px;
+            z-index: 2;
+            @include transition(all ease 0.5s);
         }
         &:hover {
-            .mediathumb {
-                border-color:$yellow;
-                img {
-                    @include scale(1.1,1.1);
-                }
-            }
-        }
-        .mediathumb {
-            border:3px solid #d7d7d7;
-            float:left;
-            margin-right:20px;
-            @include transition(all ease 0.5s);
-            overflow:hidden;
             img {
                 @include scale(1,1);
-                @include transition(all ease 15s);
+            }
+            .venture-title {
+                background-color:rgba($brand, 0.7);
             }
         }
-        .mediatitle {
-            color:$yellow;
-            line-height:14px;
-            margin:0 0 0 0;
-            a {
-                color:$yellow;
-                @include transition(all ease 0.5s);
-                &:hover {
-                    color:$red;
-                }
-            }
-        }
-        .date {
-            @include font(400);
-            color:$red;
-            font-size:11px;
-        }
-        p {
-            line-height:18px;
-        }
-        &.videobox {
-            margin-bottom:0;
-            .mediathumb {
-                float:none;
-                position:relative;
-                margin-right:0;
-                margin-bottom:15px;
-                span.play {
-                    background:url(#{$baseurl}/home/play.png) repeat center top;
-                    width:44px;
-                    height:44px;
-                    position:absolute;
-                    left:50%;
-                    margin-left:-22px;
-                    top:50%;
-                    margin-top:-22px;
-                    z-index: 2;
-                }
-                .overlay {
-                    background:url(#{$baseurl}/home/video-overlay.png) repeat center top;
-                    position:absolute;
-                    left:0;
-                    top:0;
-                    bottom:0;
-                    right:0;
-                    z-index: 1;
-                    opacity:1;
-                    @include transition(all ease 3s);
-                }
-            }
-            .mediatitle {
-                color:$red;
-                margin-bottom:15px;
+    }
+}
+
+// 5.0 Venture-tabs
+// -------------------------------
+#venture-tabs {
+    background:url(#{$baseurl}/home/venture-bg.jpg) no-repeat center top transparent;
+    background-size:100%;
+    padding:30px 0 50px;
+    border-bottom:10px solid #c57503;
+    position:relative;
+    .scrollup {
+        position:absolute;
+        left:50%;
+        bottom:0px;
+        margin-left:-41.5px;
+    }
+    .container {
+        position:relative;
+    }
+    .main-title {
+        margin-bottom:40px;
+        color:$black;
+        text-align:center;
+    }
+    .nav-tabs {
+        border-bottom:0;
+        margin-bottom:20px;
+        li {
+            &.active {
                 a {
-                    color:$red;
-                    &:hover {
-                        color:$yellow;
+                    &:after {
+                        opacity:1;
                     }
                 }
             }
-            p {
-                margin-bottom:0;
+            a {
+                background:#fff;
+                border:0;
+                display:block;
+                text-align:center;
+                position:relative;
+                padding:20px 20px;
+                height:70px;
+                @include border-top-radius(0);
+                @include border-bottom-radius(0);
+                img {
+                    width:100%;
+                    height:auto;
+                }
+                &:after {
+                    content:'';
+                    opacity:0;
+                    width:0;
+                    height:0;
+                    position:absolute;
+                    left:50%;
+                    margin-left:-7px;
+                    @include transition(all ease 0.5s);
+                }
+                &:hover {
+                    &:after {
+                        opacity:1;
+                    }
+                }
             }
-            &:hover {
-                .mediathumb {
-                    .overlay {
-                        opacity:0;
+        }
+        &.upper-level {
+            margin-bottom:200px;
+            li {
+                a {
+                    &:after {
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                        border-top: 10px solid #fff;
+                        bottom:0px;
+                    }
+                    &:hover {
+                        &:after {
+                            bottom:-7px;
+                        }
+                    }
+                }
+                &.active {
+                    a {
+                        &:after {
+                            bottom:-7px;
+                        }
+                    }
+                }
+            }
+        }
+        &.down-level {
+            li {
+                a {
+                    &:after {
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                        border-bottom: 10px solid #fff;
+                        top:0;
+                    }
+                    &:hover {
+                        &:after {
+                            top:-7px;
+                        }
+                    }
+                }
+                &.active {
+                    a {
+                        &:after {
+                            top:-7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab-content {
+        background-color:#fff;
+        padding:30px 30px;
+        position:absolute;
+        left:15px;
+        right:15px;
+        top:158px;
+        height:165px;
+        .tab-pane {
+            .tab-title {
+                text-transform:inherit;
+                margin-top:0;
+            }
+            p {
+                max-height:48px;
+            }
+            .readmore {
+                margin-top:-10px;
+                color:$brand;
+                font-size:15px;
+                @include head();
+                float:right;
+            }
+        }
+    }
+}
+
+// 6.0 Partners-listing
+// -------------------------------
+.partners-listing {
+    padding:20px 0 0;
+    .section-title {
+        text-align:center;
+        margin-bottom:30px;
+    }
+    .listing-area {
+        background-color:#f9f9f9;
+        ul {
+            li {
+                width:20%;
+                float:left;
+                a {
+                    display:block;
+                    border-right:1px solid #e1e1e1;
+                    padding:20px 10px;
+                    text-align:center;
+                    height:130px;
+                    img {
+                        @include vertical-align();
+                    }
+                }
+                &:last-child {
+                    a {
+                        border-right:0;
                     }
                 }
             }
@@ -740,29 +570,249 @@ header.main-header {
     }
 }
 
-// stay-connected starts here
-// --------------------------------
-.stay-connected {
-    background-color:$red;
+// 7.0 subscribe
+// -------------------------------
+#subscribe {
+    background-color:$brand;
+    padding:20px;
     text-align:center;
-    padding:20px 0;
-    h5 {
-        color:#fff;
-        margin: 0 0 0 0;
+    .form-group {
+        @include clearfix();
+        margin:0 0 0 0;
+        display:inline;
+        position: relative;
+        .form-control {
+            width:25%;
+            display:inline;
+            @include border-top-radius(0);
+            @include border-bottom-radius(0);
+            border:0;
+            background:none;
+            @include head();
+            color:#fff;
+            font-size:1.5em;
+            @include box-shadow(none);
+            outline:0;
+            text-align: center;
+            &:focus {
+                @include box-shadow(none);
+                outline:0;
+            }
+            @include placeholder(#fff);
+        }
+        .error {
+            color:red;
+            position:absolute;
+            font-size:1.5em;
+            font-weight:700;
+            left:0;
+            top:0px;
+        }
+        
+        .subscribe-button {
+            display:inline;
+            background-color:#fcffff;
+            @include head();
+            color:$black;
+            font-size:1em;
+            border:0;
+            padding:7px 30px;
+            @include transition(all ease 0.5s);
+            &:focus {
+                @include box-shadow(none);
+                outline:0;
+            }
+            &:hover {
+                background-color:$yellow;
+                color:#fff;
+            }
+        }
     }
-    ul {
+}
+
+// 8.0 company-information
+// -------------------------------
+.company-information {
+    padding:30px 0;
+    .basic-info {
         text-align:center;
+        i {
+            font-size:1.25em;
+            margin-bottom:10px;
+            @include transition(all ease 0.5s);
+            &.big {
+                font-size:1.5em;
+            }
+        }
+        .label {
+            font-size:.8125em;
+            display:block;
+            color:$black;
+            @include font(400);
+            text-transform: uppercase;
+            @include transition(all ease 0.5s);
+        }
+        &:hover {
+            i {
+                color:$yellow;
+            }
+            .label {
+                color:$yellow;
+            }
+        }
+        &.phone {
+            i {
+                color:$yellow;
+            }
+            .label {
+                color:$yellow;
+            }
+        }
+    }
+}
+
+// 9.0 site-footer
+// -------------------------------
+.site-footer {
+    background-color:$black;
+    padding:15px 0;
+    ul {
         margin:0 0 0 0;
         li {
-            display:inline-block;
-            color:#fff;
+            float:left;
             a {
-                color:#fff;
-                font-size:15px;
-                padding:0 10px;
+                color:#858585;
+                font-size:0.8125em;
+                @include font(400);
+                margin-right:7px;
                 @include transition(all ease 0.5s);
                 &:hover {
-                    color:$yellow;
+                    color:$brand;
+                }
+            }
+            &:after {
+                content:'|';
+                color:#858585;
+                padding-right:7px;
+            }
+            &:last-child {
+                a {
+                    margin-right:0;
+                }
+                &:after {
+                    content:'';
+                    padding-right:0;
+                }
+            }
+        }
+    }
+    .copyright {
+        margin:0 0 0 0;
+        color:#858585;
+        font-size:0.6875em;
+        @include font(400);
+        a {
+            color:#858585;
+            @include transition(all ease 0.5s);
+            &:hover {
+                color:$brand;
+                
+            }
+        }
+    }
+}
+
+// 10.0 content-area & inner-content
+// -------------------------------
+#content-area {
+    position: relative;
+    overflow:hidden;
+    &.inner-content {
+        border-bottom: 10px solid $brand;
+        .page-title {
+            color:$brand;
+        }
+        .date {
+            color:#727272;
+            font-size:0.875em;
+            margin-top: -5px;
+            margin-bottom:10px;
+        }
+        .news-thumb {
+            margin-bottom:20px;
+        }
+    }
+    .scrollup {
+        position:absolute;
+        left:50%;
+        bottom:0;
+        margin-left:-41.5px;
+        z-index: 1;
+    }
+}
+
+// 11.0 colored-bg
+// -------------------------------
+.colored-bg {
+    position:absolute;
+    left:-22px;
+    top:0;
+    bottom:0;
+    background-color:$yellow;
+    &.feeds {
+        background-color:#f2f2f2;
+        left:auto;
+        right:-22px;
+    }
+}
+
+// 12.0 sidebar
+// -------------------------------
+#sidebar {
+    .section-nav {
+        margin-top:30px;
+        margin-bottom:0;
+        li {
+            position:relative;
+            a {
+                display:block;
+                font-size:0.875em;
+                text-transform: uppercase;
+                color:$black;
+                padding:15px 15px 15px 25%;
+                border-bottom:1px solid darken($yellow, 10%);
+                font-weight:400;
+                @include transition(all ease 0.5s);
+                &:hover {
+                    background-color:darken($yellow,10%);
+                    color:#fff;
+                    &:after {
+                        right:-13px;
+                        opacity:1;
+                    }
+                }
+                &:after {
+                    content:'';
+                    border-left: 13px solid darken($yellow, 10%);
+                    border-bottom: 13px solid transparent;
+                    border-top: 13px solid transparent;
+                    position:absolute;
+                    right:0;
+                    top:50%;
+                    margin-top:-13px;
+                    opacity:0;
+                    @include transition(all ease 0.2s);
+                }
+            }
+            
+            &.active {
+                a {
+                    background-color:darken($yellow,10%);
+                    color:#fff;
+                    &:after {
+                        right:-13px;
+                        opacity:1;
+                    }
                 }
                 
             }
@@ -770,146 +820,46 @@ header.main-header {
     }
 }
 
-// twitter-widget starts here
-// --------------------------------
-.twitter-widget {
-    padding:20px 0;
-    .container {
-        position:relative;
-    }
-    .twitter-box {
-        border:1px solid #e2e2e2;
-        padding:20px;
-        background-color:#fff;
-    }
+// 13.0 single-column
+// -------------------------------
+.single-column {
+    padding:15px 7% 50px 40px;
 }
 
-// main-footer starts here
-// --------------------------------
-#main-footer {
-    background-color:#403d3a;
-    padding:20px 0 0;
-    h6 {
-        color:#fff;
-        font-size:14px;
-        margin:0 0 10px 0;
-    }
-    ul {
-        margin: 0 0 20px 0;
-        li {
-            a {
-                color:#9c9c9c;
-                font-size:12px;
-                line-height:18px;
-                display:block;
-                @include transition(all ease 0.5s);
-                &:hover {
-                    color:$yellow;
-                }
-            }
-        }
-    }
-    .newsletter {
-        @include clearfix();
-        .form-group {
-            width:80%;
-            float:left;
-            input {
-                font-size:11px;
-                color:#fff;
-                background-color:#686664;
-                @include border-left-radius(0);
-                @include border-right-radius(0);
-                border:0;
-                &:placeholder{
-                    color:#fff;
-                }
-            }
-        }
-        .submit {
-            color:#fff;
-            @include trajb();
-            background:transparent;
-            width:20%;
-            float:left;
-            border:0;
-            font-size:12px;
-        }
-    }
-    .copyright {
-        border-top:1px solid #484543;
-        padding:10px 0;
-        ul {
-            margin:0 0 0 0;
-            @include clearfix();
-            li {
-                float:left;
-                a {
-                    color:#9c9c9c;
-                    font-size:11px;
-                    display:block;
-                    margin-right:10px;
-                    @include transition(all ease 0.5s);
-                    &:after {
-                        content:'|';
-                        padding-left:10px;
-                    }
-                    &:hover {
-                        color:$yellow;
-                    }
-                }
-                &:last-child {
-                    a {
-                        &:after {
-                            content:'';
-                        }
-                    }
-                }
-            }
-        }
-        p {
-            color:#9c9c9c;
-            font-size:11px;
-            line-height:11px;
-            margin:0 0 0 0;
-            a {
-                color:#ff7225;
-            }
-        }
-    }
+// 13.2 double-column
+// ------------------------------
+.double-column {
+    padding:15px 8% 50px 40px;
 }
 
-// page-menu starts here
-// --------------------------------
-.page-menu {
-    background:url(#{$baseurl}/element/pattern.png) repeat-x left top #5c5c5c;
-    width:22%;
-    position:fixed;
-    right:-100%;
-    top:0;
-    z-index: 100;
-    bottom:0;
-    padding-top:200px;
-    @include transition(all ease 0.5s);
-    ul {
-        margin:0 0 0 0;
-        padding:0 0 0 0;
+// 14.0 breadcrumb-area
+// -------------------------------
+.breadcrumb-area {
+    @include clearfix();
+    .breadcrumb {
+        margin-bottom:0;
+        background:none;
+        padding:0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom:5px;
+        @include border-top-radius(0);
+        @include border-bottom-radius(0);
         li {
-            border-top:1px solid #000;
+            color:$brand;
+            line-height:0.875em;
+            font-size:0.875em;
             a {
-                color:#fff;
-                @include trajb();
-                font-size:15px;
-                padding:10px 30px;
-                display:block;
+                color:#727272;
+                
             }
-            &:last-child {
-                border-bottom:1px solid #000;
+            + li {
+                &:before {
+                    content: "> ";
+                    padding: 0 2px;
+                    color: #727272;
+                }
             }
         }
-    }
-    &.right {
-        right:0;
     }
 }
 
