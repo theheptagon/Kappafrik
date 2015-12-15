@@ -22,9 +22,12 @@ gulp.task('sass', function () {
             ]
         })
         .pipe(gulp.dest('./public/ui/stylesheet'))
-        .pipe(browserSync.stream({
-            match: '**/*.css'
-        }));
+		    // .pipe(browserSync.stream({
+		    //     match: '**/*.css'
+		    // })
+
+
+		    // ); 
 });
 
 
@@ -42,8 +45,8 @@ gulp.task('watch', function () {
         server: "./public"
     });
     gulp.watch(config.sassPath + '/*.scss', ['sass']);
-    gulp.watch("public/*.html").on('change', browserSync.reload);
-    gulp.watch('./resources/jquery/*.js', ['compress'], browserSync.reload);
+   //gulp.watch("public/*.html").on('change', browserSync.reload);
+    //gulp.watch('./resources/jquery/*.js', ['compress'], browserSync.reload);
 });
 
 gulp.task('default', ['bower', 'sass', 'compress', 'watch']);
