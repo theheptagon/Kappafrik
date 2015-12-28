@@ -46,7 +46,7 @@ gulp.task('watch', function () {
     });
     gulp.watch(config.sassPath + '/*.scss', ['sass']);
    //gulp.watch("public/*.html").on('change', browserSync.reload);
-    //gulp.watch('./resources/jquery/*.js', ['compress'], browserSync.reload);
+    gulp.watch('./resources/jquery/*.js', ['compress'], browserSync.reload);
 });
 
 gulp.task('default', ['bower', 'sass', 'compress', 'watch']);

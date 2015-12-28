@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>KappaFrick</title>
-
     <!-- Bootstrap and other CSS -->
     <link href="ui/stylesheet/uicreep.css" rel="stylesheet">
-
     <link rel="shortcut icon" href="ui/media/element/apple-touch-icon-57-precomposed.png" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -88,7 +86,6 @@
     <div class="social-overlay"></div>
     <!-- social box end -->
     <!-- social ends here -->
-    
     <header class="site-header">
         <img id="logo-main" src="ui/media/logo/kappafrick.png" alt="Kappafrick">
         <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
@@ -104,7 +101,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-primary-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li class="dropdown">
                             <a href="aboutus.html">Our Focus</a>
                             <ul class="dropdown-menu">
@@ -145,7 +142,7 @@
 
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="partners.html">Partners</a>
                         </li>
                         <li class="dropdown">
@@ -188,199 +185,98 @@
     </header>
     <!-- Header area ends here 
     -------------------------------------- -->
-    
-    <section id="page-banner">
+    <section id="page-banner" class="inner-banner">
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="ui/media/banner/homepage.jpg" alt="">
-                    <div class="slide-title">
-                        <h2 class="title">THE AFRICAN WEALTH COOPERATIVE</h2>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="ui/media/banner/homepage.jpg" alt="">
-                    <div class="slide-title">
-                        <h2 class="title">THE AFRICAN WEALTH COOPERATIVE</h2>
-                    </div>
+                    <img src="ui/media/banner/aboutus.jpg" alt="">
                 </div>
             </div>
         </div>
-        <a href="javascript:;" class="scrolldown"><img src="ui/media/element/blue-scrolldown.png" alt=""></a>
     </section>
     <!-- Page-banner ends here 
     -------------------------------------- -->
-    
-    <section id="content-area">
-        <div class="container">
-            <article class="our-focus">
-                <h1 class="title h3">Our Focus</h1>
-                <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-            </article>
-            <!-- our-focus ends here 
-            ---------------------------------->
+    <section id="content-area" class="inner-content">
+        <div class="container-fluid">
             
-            <aside class="venture-list-main">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="venture-list">
-                            <a href="assetmanagement.html">
-                                <h3 class="venture-title">Asset Management</h3>
-                                <img src="ui/media/home/box-image.jpg" alt="">
-                            </a>
+                    <!-- single-column if its double-column use appropriate classes -->
+                    <div class="single-column">
+                        <div class="breadcrumb-area">
+                            <ol class="breadcrumb pull-left">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Partners</li>
+                            </ol>
                         </div>
-                        <!-- venture-list ends here -->
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="venture-list">
-                            <a href="venturecapital.html">
-                                <h3 class="venture-title"> Venture Capital</h3>
-                                <img src="ui/media/home/venture-capital.jpg" alt="">
-                            </a>
-                        </div>
-                        <!-- venture-list ends here -->
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="venture-list">
-                            <a href="advisory.html">
-                                <h3 class="venture-title">Advisory</h3>
-                                <img src="ui/media/home/advisory.jpg" alt="">
-                            </a>
-                        </div>
-                        <!-- venture-list ends here -->
-                    </div>
-                </div>
-            </aside>
-            <!-- venture-list-main ends here 
-            ---------------------------------->
-        </div>
-    </section>
-    <!-- content-area ends here 
-    -------------------------------------- -->
-    
-    <section id="venture-tabs">
-        <div class="container">
-            <h2 class="h4 main-title">Our Ventures</h2>
-            
-            <ul class="nav upper-level nav-tabs row" role="tablist">
-                <li role="presentation" class="active col-sm-2 col-xs-4"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><img src="ui/media/home/tab/limited.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><img src="ui/media/home/tab/management.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><img src="ui/media/home/tab/partners.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"><img src="ui/media/home/tab/investment.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kapower.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kapetrol.png" alt=""></a></li>
-            </ul>
-            <!-- upper-level tab ends here -->
-            <ul class="nav down-level nav-tabs row">
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab7" aria-controls="tab7" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kainfra.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab8" aria-controls="tab8" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kappatrans.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab9" aria-controls="tab9" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kappajet.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab10" aria-controls="tab10" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kapaghani.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab11" aria-controls="tab11" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kapaghani.png" alt=""></a></li>
-                <li role="presentation" class="col-sm-2 col-xs-4"><a href="#tab12" aria-controls="tab12" role="tab" data-toggle="tab"><img src="ui/media/home/tab/kapaghani.png" alt=""></a></li>
-            </ul>
-            <!-- down-level tab ends here -->
-            
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active fade in" id="tab1">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Limited</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab2">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Management</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab3">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Partners</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a></div>
-                <div role="tabpanel" class="tab-pane fade" id="tab4">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Investment</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab5">
-                    <h3 class="tab-title h4"><a href="ventures.html">KaPower</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab6">
-                    <h3 class="tab-title h4"><a href="ventures.html">KaPetrol</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab7">
-                    <h3 class="tab-title h4"><a href="ventures.html">KaInfra</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab8">
-                    <h3 class="tab-title h4"><a href="ventures.html">KappaTrans</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab9">
-                    <h3 class="tab-title h4"><a href="ventures.html">KappaJet</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab10">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Ghana</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab11">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Ghana</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="tab12">
-                    <h3 class="tab-title h4"><a href="ventures.html">Kappafrick Ghana</a></h3>
-                    <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
-                    <a href="ventures.html" class="readmore">Read More</a>
-                </div>
-              </div>
-            
-            
-            
-        </div>
-        <a href="javascript:;" class="scrollup"><img src="ui/media/element/yellow-scrollup.png" alt=""></a>
-    </section>
-    <!-- content-area ends here 
-    -------------------------------------- -->
-    
-    <section class="partners-listing">
-        <h2 class="h3 section-title">Partners</h2>
-        <!-- If we need navigation buttons -->
-        
-        <div class="listing-area">
-            <div class="container">
-                <div class="swiper-button-prev"><img src="ui/media/element/section-left-arrow.png" alt=""></div>
-                <div class="swiper-button-next"><img src="ui/media/element/section-right-arrow.png" alt=""></div>
-                <!-- Swiper -->
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/petrolog.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/petrolog.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript;;"><img src="ui/media/home/partners/mainstream.png" alt=""></a></div>
-                        <div class="swiper-slide"><a href="javascript:;"><img src="ui/media/home/partners/first.png" alt=""></a></div>
+                        <h1 class="h3 page-title">  
+                            Partners
+                        </h1>
+                        
+                        <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra.</p>
+                        <p>Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. Elementum augue ex molestie eros. Etiam consequat consequat lectus quis phar finib etra. </p>
+
+                        <ul class="partners-list list-unstyled">
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/first.png" height="83" width="70" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/mainstream.png" height="79" width="196" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/petrolog.png" height="44" width="200" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/first.png" height="83" width="70" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/mainstream.png" height="79" width="196" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/first.png" height="83" width="70" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/mainstream.png" height="79" width="196" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/petrolog.png" height="44" width="200" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/first.png" height="83" width="70" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="partnerdetail.html" class="partnerdetail" data-fancybox-type="iframe">
+                                    <img src="ui/media/home/partners/mainstream.png" height="79" width="196" alt="">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     
-                </div>
+               
             </div>
-        </div>
+            <!-- venture-list-main ends here 
+            ---------------------------------->
+            <a href="javascript:;" class="scrollup"><img src="ui/media/element/blue-scrolldown.png" alt=""></a>
+        
     </section>
-    <!-- partners-listing ends here 
+    <!-- content-area ends here 
     -------------------------------------- -->
     
     <section id="subscribe">
@@ -393,7 +289,6 @@
     </section>
     <!-- subscribe ends here 
     -------------------------------------- -->
-    
     <aside class="company-information">
         <div class="container">
             <div class="row">
@@ -417,13 +312,9 @@
                 </div>
             </div>
         </div>
-        <div class="map-box">
-             <div id="map" style="width: 100%; height: 100%;"></div>
-        </div>
     </aside>
     <!-- company-information ends here
     -------------------------------------- -->
-    
     <footer class="site-footer">
         <div class="container">
             <ul class="list-unstyled pull-left footer-links">
@@ -446,9 +337,6 @@
     </footer>
     <!-- site-footer ends here
     -------------------------------------- -->
-
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -460,100 +348,7 @@
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="ui/javascript/uicreep.js"></script>
-    <script type="text/javascript">
-    var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
-      ['Coogee Beach', -33.923036, 151.259052, 5],
-      ['Cronulla Beach', -34.028249, 151.157507, 3],
-      ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-      ['Maroubra Beach', -33.950198, 151.259302, 1]
-    ];
-    var styles = [
-        {
-            "featureType":"water",
-            "elementType":"geometry",
-            "stylers":[{"color":"#e9e9e9"},{"lightness":17}]
-        },{
-            "featureType":"landscape",
-            "elementType":"geometry",
-            "stylers":[{"color":"#f5f5f5"},{"lightness":20}]
-        },{
-            "featureType":"road.highway",
-            "elementType":"geometry.fill",
-            "stylers":[{"color":"#ffffff"},
-            {"lightness":17}]
-        },{
-            "featureType":"road.highway",
-            "elementType":"geometry.stroke",
-            "stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]
-        },{
-            "featureType":"road.arterial",
-            "elementType":"geometry",
-            "stylers":[{"color":"#ffffff"},{"lightness":18}]
-        },{
-            "featureType":"road.local",
-            "elementType":"geometry",
-            "stylers":[{"color":"#ffffff"},
-            {"lightness":16}]
-        },{
-            "featureType":"poi",
-            "elementType":"geometry",
-            "stylers":[{"color":"#f5f5f5"},{"lightness":21}]
-        },{
-            "featureType":"poi.park",
-            "elementType":"geometry",
-            "stylers":[{"color":"#dedede"},{"lightness":21}]
-        },{
-            "elementType":"labels.text.stroke",
-            "stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]
-        },{
-            "elementType":"labels.text.fill",
-            "stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]
-        },{
-            "elementType":"labels.icon",
-            "stylers":[{"visibility":"off"}]
-        },{
-            "featureType":"transit",
-            "elementType":"geometry",
-            "stylers":[{"color":"#f2f2f2"},{"lightness":19}]
-        },{
-            "featureType":"administrative",
-            "elementType":"geometry.fill",
-            "stylers":[{"color":"#fefefe"},{"lightness":20}]
-        },{
-            "featureType":"administrative",
-            "elementType":"geometry.stroke",
-            "stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]
-        }
-    ];
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(-33.92, 151.25),
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles:styles,
-      scrollwheel: false,
-      draggable: false
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-  </script>
+    
 </body>
 
 </html>

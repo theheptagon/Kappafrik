@@ -2,88 +2,79 @@
 ==================================================================*/
 
 @media (min-width: $screen-md) and (max-width: $screen-md-max) and (orientation: landscape) {
-	body {
-		padding-top:139px;
-	}
+    body {
+        font-size:140%;
+    }
+    #navbar-primary{
+        &.navbar-default {
+            .navbar-nav{
+                >li {
+                    >a {
+                        padding:5px 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+    #page-banner {
+        .slide-title {
+            .title {
+                white-space: nowrap;
+            }
+        }
+    }
+    
+    .partners-listing {
+        .listing-area {
+            .swiper-button-next {
+                right:20px;
+            }
+            .swiper-button-prev {
+                left:20px;
+            }
+            .swiper-slide {
+                a {
+                    padding:20px;
+                    overflow:hidden;
+                }
+            }
+        }
+    }
+    
+    .single-column {
+        padding:15px 5% 50px 20px;
+    }
+    .ventures-media {
+        width:100%;
+    }
+    #sidebar {
+        .section-nav {
+            li {
+                a {
+                    padding:15px 20px;
+                }
+            }
+        }
+    }
 
-	#mainHeader {
-		.partner-links {
-			width:87%;
-			li {
-				width:6%;
-				img {
-					width:100%;
-				}
-			}
-		}
-	}
-
-	.hotel-search {
-		.submit-btn {
-			font-size:10px;
-		}
-	}
-
-	.signup {
-		.signupbtn {
-			font-size:10px;
-		}
-	}
-
-	.main-banner-booking {
-		.swiper-container {
-			.swiper-pagination {
-				right:3%;
-			}
-		}
-	}
-
-	.booking-bar{
-		.form-group {
-			.form-control {
-				font-size:10px;
-			}
-			.submitbtn {
-				font-size:12px;
-			}
-			&.nobg {
-				i {
-					font-size:10px;
-					top:13px;
-				}
-			}
-		}
-	}
-
-	.country-box {
-		margin-bottom:0;
-		.country-thumb {
-			min-height:160px;
-			img {
-				width:100%;
-			}
-		}
-		.title {
-			font-size:20px;
-		}
-		.info-box {
-			span{
-				&.ratesfrom {
-					font-size:14px;
-				}
-				&.price {
-					font-size:32px;
-				}
-			}
-			.booknowbtn {
-				font-size:12px;
-				i {
-					font-size:12px;
-				}
-			}
-		}
-		.viewmore {
-			height:60px;
-		}
-	}
+    .partners-list {
+        li {
+            width:33.33333%;
+            &:nth-child(5n) {
+                a {
+                    margin-right:10px;
+                }
+            }
+            &:nth-child(3n) {
+                a {
+                    margin-right:0;
+                }
+            }
+            img {
+                max-width:100px;
+                height:auto;
+            }
+        }
+    }
 }

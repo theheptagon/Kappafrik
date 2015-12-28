@@ -1,264 +1,252 @@
 @media (max-width: $screen-xs-max) and (orientation: portrait){ 
     body {
-        padding-top:104px;
+        font-size:140%;
+        overflow-y:scroll;
+        overflow-x:hidden;
     }
 
-    #mainHeader {
-        .logo {
-            height:30px;
-        }
-        .Hiltonhome, 
-        .mobile-search, 
-        .mobile-partners {
-            padding:20px 10%;
-            margin-right:2px;
-            span {
-                font-size:20px;
-            }
-        }
-
-        .mobile-partners {
-            padding:20px 10%;
-        }
-        .partner-links {
-            width:84%;
-            display:none;
-            li {
-                width:6%;
-                img {
-                    width:100%;
-                }
-            }
-        }
-    }
-
-    .hotel-search {
-        .form-group {
-            width:49%;
-            margin-bottom:5px;
-            margin-right:0;
-            margin-left:2%;
-            &:first-child {
-                margin-left:0;
-            }
-            .form-control {
-                font-size:10px;
-
-            }
-        }
-        .submit-btn {
-            font-size:10px;
-            width:100%;
-            margin-bottom:25px;
-        }
-    }
-
-    .signup {
-        width:auto;
-        float:none;
-        @include clearfix();
-        margin-bottom:5px;
-        .signupbtn {
-            font-size:10px;
-            width: 23%;
-        }
-        .form-control {
-            width:77%;
-            font-size:10px;
-        }
-
-    }
-
-    .language {
+     .social-slide-btn{
         display:none;
     }
-
-    .searchworld {
-        width:auto;
-        float:none;
-        @include clearfix();
-    }
-
-    .searchworld {
-        .form-control {
-            width:77%;
-            font-size:10px;
-        }
-        .searchbtn {
-            width:23%;
+    
+    header.site-header {
+        overflow:hidden;
+        #logo-main {
+            margin:20px 20px 20px;
         }
     }
-
-    .main-banner-booking {
-        height:486px;
-        .swiper-container {
-            .swiper-pagination {
-                right:3%;
-            }
-            .swiper-wrapper {
-                .swiper-slide {
-                    background-position:right top;
-                    height:486px;
-                    background-size:160%;
-                    .slider-content {
-                        width:100%;
-                        position:absolute;
-                        float:none;
-                        margin-top:0;
-                        bottom:0;
-                        left:0;
-                        background-color:rgba(0,0,0,0.7);
-                        padding-bottom:20px;
-                        padding-top:10px;
-                        h3,
-                        h4 {
-                            span {
-                                background-color:transparent;
-                                display:block;
-                                padding:10px 20px;
-                            }
-                        }
-                        h4 {
-                            font-size:18px;
-                            text-transform:lowercase;
-                            margin-bottom:20px;
-                            span {
-                                line-height:24px;
-                            }
-                        }
-                        .readmorebtn {
-                            margin-bottom:20px;
-                            margin-left:20px;
-                            margin-right:20px;
-                        }
+    
+    #navbar-primary{
+        &.navbar-default {
+            min-height:0;
+            .navbar-nav{
+                margin:0 0 0 0;
+                >li {
+                    display:block;
+                    border-bottom:1px solid #ccc;
+                    >a {
+                        padding:5px 15px;
+                        text-align:left;
+                        padding:10px;
+                        display:block;
+                    }
+                    .dropdown-menu{
+                        display:none;
+                    }
+                    &:last-child {
+                        border-bottom:0;
+                        padding:10px 10px 20px;
                     }
                 }
             }
-            .swiper-pagination {
-                bottom:260px;
-                right:auto;
+            .sub-navigation {
+                display:none;
+            }
+        }
+    }
+    
+    .navbar-toggle {
+        margin-top:-64px;
+        margin-right:35px;
+    }
+    
+    #page-banner {
+        overflow:hidden;
+        .slide-title {
+            .title {
+                white-space: nowrap;
+                font-size:1.1em;
+            }
+        }
+    }
+    
+    .partners-listing {
+        overflow:hidden;
+        .listing-area {
+            .swiper-button-next {
+                right:20px;
+            }
+            .swiper-button-prev {
+                left:20px;
+            }
+            .swiper-slide {
+                a {
+                    padding:20px;
+                    overflow:hidden;
+                    border-left:0;
+                }
+            }
+        }
+    }
+    
+    .site-footer {
+        ul {
+            text-align:center;
+            &.pull-left,
+            &.pull-right {
                 width:100%;
+                float:none;
+                li {
+                    float:none;
+                    display:inline;
+                }
+            }
+        }
+    }
+    
+    section#venture-tabs {
+        .nav{
+            >li {
+                margin-bottom:10px;
+            }
+        }
+        .nav-tabs{
+            &.upper-level {
+                margin-bottom:0;
+            }
+            li {
+                a {
+                    padding:10px;
+                    height:50px;
+                }
+            }
+        }
+        .tab-content {
+            position:static;
+            height:auto;
+            .tab-pane {
+                p {
+                    max-height:100%;
+                }
+            }
+        }
+    }
+    .single-column {
+        padding:20px;
+    }
+    .colored-bg {
+        display:none;
+    }
+    .toggle-forMobile {
+        background-color:$brand;
+        color:#fff;
+        width:100%;
+        display:block;
+        border:0;
+        padding:15px ;
+        font-size:1.5em;
+        font-weight:700;
+    }
+    #sidebar {
+        padding-top:0;
+        background-color:$yellow;
+        .section-nav {
+            display:none;
+            li {
+                a {
+                    padding:10px;
+                    text-align:center;
+                }
+            }
+        }
+    }
+    
+    #content-area{
+        &.inner-content {
+            img{
+                &.pull-right,
+                &.pull-left {
+                    margin-bottom:20px;
+                }
             }
         }
     }
 
-    .booking-bar{
+    #subscribe {
         .form-group {
             .form-control {
-                font-size:10px;
-            }
-            .submitbtn {
-                font-size:12px;
-            }
-            &.nobg {
-                i {
-                    font-size:10px;
-                    top:13px;
-                }
-            }
-        }
-        .banner-ad {
-            a {
-                margin-top:2px;
-            }
-        }
-    }
-
-    .country-box {
-        margin-bottom:0;
-        .country-thumb {
-            min-height:160px;
-            img {
                 width:100%;
             }
         }
-        .title {
-            font-size:20px;
-        }
-        .info-box {
-            span{
-                &.ratesfrom {
-                    font-size:14px;
-                }
-                &.price {
-                    font-size:32px;
-                }
-            }
-            .booknowbtn {
-                font-size:12px;
-                i {
-                    font-size:12px;
-                }
-            }
-        }
-        .viewmore {
-            height:60px;
-        }
     }
 
-    #search-area {
-        margin-top:43px;
-        display:none;
-        @include transition(all ease 0.5s);
-    }
-
-    .booking-bar {
-        display:none;
-    }
-
-    footer,
-    .strip {
-        display:none;
-    }
-    .blog-marquee {
-        margin-bottom:20px;
-    }
-
-    nav#slide-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    float: left;
-    width: 100%;
-    max-width: 284px;
-    height: 100%;
-    z-index: 10;
-    background-color:$gray;
-    -moz-transition: all 300ms;
-    -webkit-transition: all 300ms;
-    transition: all 300ms;
-    display:none;
-    h5 {
-        color:#fff;
-        @include font(700);
-        text-transform:uppercase;
-        font-size:28px;
-        padding:20px 20px 0;
-        border-bottom:1px soild #fff;
-    }
-    > ul {
-        display: block;
-        margin: 20px;
-        padding: 0;
-        list-style: none;
-
-        -moz-transition: all 300ms;
-        -webkit-transition: all 300ms;
-        transition: all 300ms;
-
+    .event-list {
         li {
-            color: #dfe5eb;
-            padding: 6px 0;
-            cursor: pointer;
-
-            &:hover { color: #59e9df; }
-            a {
-                color:#fff;
+            .event-thumb {
+                margin-bottom:20px;
             }
         }
     }
-}
 
-   
+    .mapper {
+        .left-side,.right-side {
+            float:none;
+            width:100%;
+        }
+    }
+    .contactform {
+        .form-group.captcha {
+            @include clearfix();
+            .form-control {
+                width:50%;
+            }
+            .submit {
+                width:100%;
+                text-align:center;
+            }
+        }
+    }
+
+    .innersocial {
+        position:relative;
+        @include clearfix();
+        display:block;
+        margin-bottom:10px;
+    }
+    .navbar-default {
+        .navbar-toggle {
+            background:$yellow;
+            border:0;
+            border-radius:0;
+            .icon-bar {
+                background-color:#fff;
+            }
+        }
+    }
+
+    .ventures-media {
+        width:100%;
+        &.pull-left {
+            float:none !important;
+        }
+         .ventures-logo,.ventures-info {
+            float:none;
+            width:100%;
+            border-right:0;
+            text-align:center;
+         }
+
+    }
+
+    .partners-list {
+        li {
+            width:50%;
+            &:nth-child(5n) {
+                a {
+                    margin-right:10px;
+                }
+            }
+            &:nth-child(2n) {
+                a {
+                    margin-right:0;
+                }
+            }
+            img {
+                max-width:100px;
+                height:auto;
+            }
+        }
+    }
+    
+
 }
